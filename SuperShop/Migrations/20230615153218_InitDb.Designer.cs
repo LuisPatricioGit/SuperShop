@@ -10,8 +10,8 @@ using SuperShop.Data;
 namespace SuperShop.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230607110652_FixedImageId")]
-    partial class FixedImageId
+    [Migration("20230615153218_InitDb")]
+    partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

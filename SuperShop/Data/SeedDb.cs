@@ -32,7 +32,7 @@ namespace SuperShop.Data
                     FirstName = "Luis",
                     LastName = "Patricio",
                     Email = "luispatricio.info@gmail.com",
-                    UserName = "MrSiul",
+                    UserName = "luispatricio.info@gmail.com",
                     PhoneNumber = "999666333"
                 };
 
