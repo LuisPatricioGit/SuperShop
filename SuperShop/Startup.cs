@@ -38,7 +38,7 @@ namespace SuperShop
 
             services.AddDbContext<DataContext>(cfg =>
             {
-                cfg.UseSqlServer(this.Configuration.GetConnectionString("LocalConnection"));
+                cfg.UseSqlServer(this.Configuration.GetConnectionString("LocalConnection"));// OnlineConnection \ LocalConnection
             });
 
             services.AddTransient<SeedDb>();
