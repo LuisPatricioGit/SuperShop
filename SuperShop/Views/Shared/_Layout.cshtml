@@ -24,6 +24,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
                         </li>
+
+                        @if (this.User.Identity.IsAuthenticated && this.User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="" asp-action="">Users</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="" asp-action="">Roles</a></li>
+                                </ul>
+                            </li>    
+                        }
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
@@ -32,10 +44,10 @@
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark"  asp-area="" asp-controller="Account">@this.User.Identity.Name</a>
+                                <a class="nav-link disabled text-dark" asp-controller="Account">@this.User.Identity.Name</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-primary" asp-area="" asp-controller="Account" asp-action="ChangeUser"> ⇄</a>
+                                <a class="btn btn-primary" asp-area="" asp-controller="Account" asp-action="ChangeUser">⇄</a> 
                             </li>
                             <li class="nav-item">
                                 <a class="btn btn-danger" asp-area="" asp-controller="Account" asp-action="Logout">⍈</a>

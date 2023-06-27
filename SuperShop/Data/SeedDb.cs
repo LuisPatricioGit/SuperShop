@@ -11,18 +11,23 @@ namespace SuperShop.Data
     {
         private readonly DataContext _context;
         private readonly IUserHelper _userHelper;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private Random _random;
 
-        public SeedDb(DataContext context, IUserHelper userHelper)
+        public SeedDb(DataContext context, IUserHelper userHelper, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
             _userHelper = userHelper;
             _random = new Random();
+            _roleManager = roleManager;
         }
 
         public async Task SeedAsync()
         {
             await _context.Database.EnsureCreatedAsync();
+
+            await _userHelper.CheckRoleAsync("Admin");
+            await _userHelper.CheckRoleAsync("Customer");
 
             var user = await _userHelper.GetUserByEmailAsync("luispatricio.info@gmail.com");
             if (user == null)
@@ -41,7 +46,16 @@ namespace SuperShop.Data
                 {
                     throw new InvalidOperationException("Could not Create User in Seeder");
                 }
+
+                await _userHelper.AddUserToRoleAsync(user, "Admin");
             }
+
+            var isInRole = await _userHelper.IsUserInRoleAsync(user, "Admin");
+            if (!isInRole)
+            {
+                await _userHelper.AddUserToRoleAsync(user, "Admin");
+            }
+
 
             if (!_context.Products.Any())
             {

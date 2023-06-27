@@ -35,9 +35,10 @@ namespace SuperShop
             })
             .AddEntityFrameworkStores<DataContext>();
 
+
             services.AddDbContext<DataContext>(cfg =>
             {
-                cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
+                cfg.UseSqlServer(this.Configuration.GetConnectionString("LocalConnection"));
             });
 
             services.AddTransient<SeedDb>();
@@ -48,6 +49,8 @@ namespace SuperShop
             services.AddScoped<IProductRepository, ProductRepository>();
 
             services.AddControllersWithViews();
+
+       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,6 +80,8 @@ namespace SuperShop
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }
