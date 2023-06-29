@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using System;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SuperShop.Data.Entities;
 using SuperShop.Helpers;
 using SuperShop.Models;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SuperShop.Controllers
 {
@@ -168,5 +169,11 @@ namespace SuperShop.Controllers
             }
             return View(model);
         }
+
+        public IActionResult NotAuthorized()
+        {
+            return View();
+        }
     }
+
 }

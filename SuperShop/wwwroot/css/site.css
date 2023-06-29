@@ -63,9 +63,62 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Forbidden Page styles
+-------------------------------------------------- */
+
+.container403 {
+    text-align: center;
+    margin: 1rem 0.5rem 0;
+}
+
+.container403 h1 {
+    font-family: var(--font-header);
+    font-size: calc(4rem + 2vw);
+    text-transform: uppercase;
+}
+
+.container403 p {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+    margin: 1.5rem 0 3rem;
+}
+
+#ghost {
+    bottom: 15%;
+    position: absolute;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 5s;
+}
+
+@-webkit-keyframes run {
+    0% {
+        left: 0;
+    }
+
+    48% {
+        -webkit-transform: rotateY(0deg);
+    }
+
+    50% {
+        left: calc(100% - 100px);
+        -webkit-transform: rotateY(180deg);
+    }
+
+    98% {
+        -webkit-transform: rotateY(180deg);
+    }
+
+    100% {
+        left: 0;
+        -webkit-transform: rotateY(0deg);
+    }
 }
