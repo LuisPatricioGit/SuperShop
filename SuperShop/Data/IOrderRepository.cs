@@ -1,7 +1,7 @@
-﻿using SuperShop.Data.Entities;
-using SuperShop.Models;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using SuperShop.Data.Entities;
+using SuperShop.Models;
 
 namespace SuperShop.Data
 {
@@ -16,5 +16,7 @@ namespace SuperShop.Data
 		Task ModifyOrderDetailTempQuantityAsync(int id, double quantity);
 
 		Task DeleteDetailTempAsync(int id);
+
+		Task<bool> ConfirmOrderAsync(string userName);
     }
 }
