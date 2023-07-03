@@ -1,6 +1,6 @@
-﻿using SuperShop.Data.Entities;
+﻿using System;
+using SuperShop.Data.Entities;
 using SuperShop.Models;
-using System;
 
 namespace SuperShop.Helpers
 {

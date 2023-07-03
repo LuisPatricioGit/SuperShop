@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using SuperShop.Data.Entities;
-using SuperShop.Helpers;
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using SuperShop.Data.Entities;
+using SuperShop.Helpers;
 
 namespace SuperShop.Data
 {

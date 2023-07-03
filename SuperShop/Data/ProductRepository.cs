@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using SuperShop.Data.Entities;
-using System.Linq;
 
 namespace SuperShop.Data
 {
