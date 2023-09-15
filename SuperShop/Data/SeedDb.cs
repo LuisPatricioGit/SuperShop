@@ -55,6 +55,7 @@ namespace SuperShop.Data
                     LastName = "Patricio",
                     Email = "luispatricio.info@gmail.com",
                     UserName = "luispatricio.info@gmail.com",
+                    EmailConfirmed = true,
                     PhoneNumber = "999666333",
                     Address = "Rua Ua 2",
                     CityId = _context.Countries.FirstOrDefault().Cities.FirstOrDefault().Id,
